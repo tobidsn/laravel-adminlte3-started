@@ -9,7 +9,7 @@ php artisan key:generate
 Create a database and cp .env.example to .env
 ```
 # Screen Shot
-![alt text](https://i.imgur.com/c3yUFg7.png)
+![alt text](https://i.imgur.com/eOphznr.png)
 
 ## Built With
 
