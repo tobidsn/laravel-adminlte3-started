@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/dashboard/home', 'DashboardController@versionone')->name('home');
 Route::get('/dashboard/v2', 'DashboardController@versiontwo')->name('v2');
 Route::get('/dashboard/v3', 'DashboardController@versionthree')->name('v3');
