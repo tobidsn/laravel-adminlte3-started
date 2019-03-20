@@ -2,8 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('dashboard/home') }}" class="brand-link">
-        <img src="/img/logo.png" alt="Laravel" class="brand-image img-circle elevation-3"
-        style="opacity: .8">
+        <img src="/img/logo.png" alt="Laravel" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Laravel</span>
     </a>
 
@@ -12,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="/img/avatar3.png" class="img-circle elevation-2" alt="User Image">
+                <img src="/img/avatar.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"> {{auth()->user()->name!=null ? auth()->user()->name : "Administrator"}} </a>
@@ -33,19 +32,19 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('home') }}" class="nav-link {!! classActiveSegment(2, 'home') !!}">
-                                <i class="fa fa-circle-o"></i>
+                                <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Dashboard v1</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('v2') }}" class="nav-link {!! classActiveSegment(2, 'v2') !!}">
-                                <i class="fa fa-circle-o"></i>
+                                <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Dashboard v2</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('v3') }}" class="nav-link {!! classActiveSegment(2, 'v3') !!}">
-                                <i class="fa fa-circle-o"></i>
+                                <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Dashboard v3</p>
                             </a>
                         </li>
