@@ -15,22 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('magic/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('magic/login', 'Auth\LoginController@login')->name('login');
+Route::post('magic/logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::group(['middleware' => 'has_any_role:admin', 'prefix' => 'magic', 'namespace' => 'Admin'], function() {
+	Route::get('settings', 'SettingController@index');
+    Route::post('settings', 'SettingController@update');
+    Route::resource('users', 'UsersController');
+    Route::get('userlist', 'UsersController@getdata');
+    Route::get('useraction', 'UsersController@useraction');
+});
 
-Route::get('/dashboard/home', 'DashboardController@versionone')->name('home');
-Route::get('/dashboard/v2', 'DashboardController@versiontwo')->name('v2');
-Route::get('/dashboard/v3', 'DashboardController@versionthree')->name('v3');
-Route::get('/dashboard/widget', 'DashboardController@widget')->name('widget');
-Route::get('/chart/v1', 'DashboardController@charts')->name('chartv1');
-Route::get('/chart/v2', 'DashboardController@flot')->name('chartv2');
-Route::get('/chart/v3', 'DashboardController@inline')->name('chartv3');
-Route::get('/ui/general', 'DashboardController@general')->name('general');
-Route::get('/ui/icons', 'DashboardController@icons')->name('icons');
-Route::get('/ui/buttons', 'DashboardController@buttons')->name('buttons');
-Route::get('/ui/sliders', 'DashboardController@sliders')->name('sliders');
-Route::get('/form/fgeneral', 'DashboardController@fgeneral')->name('fgeneral');
-Route::get('/form/fadvanced', 'DashboardController@fadvanced')->name('fadvanced');
-Route::get('/form/feditors', 'DashboardController@feditors')->name('feditors');
-
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::group(['middleware' => 'has_any_role:admin,editor', 'prefix' => 'magic', 'namespace' => 'Admin'], function() {
+	Route::get('home', 'DashboardController@versionone');
+	Route::get('profile', 'UsersController@profile');
+	Route::patch('profile/{id}', 'UsersController@updateProfile');
+	Route::get('terms_policy', 'SettingController@termpolicy');
+    Route::post('terms_policy', 'SettingController@updatetp'); 
+});

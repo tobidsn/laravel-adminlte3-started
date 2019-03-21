@@ -1,7 +1,5 @@
-@extends('layouts.master') 
+@extends('_admin.master') 
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -575,22 +573,17 @@
     <!-- /.container-fluid -->
   </section>
   <!-- /.content -->
-</div>
 <!-- /.content-wrapper -->
 @endsection
  
-@section('javascript')
-<!-- jQuery -->
-<script src="/dist/plugins/jquery/jquery.min.js"></script>
+@section('javascript') 
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 
-</script>
-<!-- Bootstrap 4 -->
-<script src="/dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+</script> 
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="/dist/plugins/morris/morris.min.js"></script>
@@ -611,11 +604,7 @@
 <!-- Slimscroll -->
 <script src="/dist/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="/dist/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/dist/js/adminlte.js"></script>
+<script src="/dist/plugins/fastclick/fastclick.js"></script> 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/dist/js/demo.js"></script>
+<script src="/dist/js/pages/dashboard.js"></script> 
 @stop

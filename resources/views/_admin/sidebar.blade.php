@@ -1,7 +1,6 @@
-<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ url('dashboard/home') }}" class="brand-link">
+    <a href="{{ url('magic/home') }}" class="brand-link">
         <img src="/img/logo.png" alt="Laravel" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Laravel</span>
     </a>
@@ -21,36 +20,15 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item has-treeview {!! classActivePath(1,'dashboard') !!}">
-                    <a href="{!! route('home') !!}" class="nav-link {!! classActiveSegment(1, 'dashboard') !!}">
+                <li class="nav-item">
+                    <a href="{!! url('magic/home') !!}" class="nav-link {!! classActiveSegment(2, 'home') !!}">
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>
                             Dashboard
-                            <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link {!! classActiveSegment(2, 'home') !!}">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('v2') }}" class="nav-link {!! classActiveSegment(2, 'v2') !!}">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v2</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('v3') }}" class="nav-link {!! classActiveSegment(2, 'v3') !!}">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v3</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('widget') }}" class="nav-link">
                         <i class="nav-icon fa fa-th"></i>
                         <p>
@@ -174,146 +152,30 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-header">EXAMPLES</li>
+                </li> --}}
+                <li class="nav-header">ADMIN NAVIGATION</li>
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
-                        <i class="nav-icon fa fa-calendar"></i>
+                    <a href="{{ url('magic/users') }}" class="nav-link {!! classActiveSegment(2, 'users') !!}">
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
-                            Calendar
-                            <span class="badge badge-info right">2</span>
+                            Administrator
                         </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-envelope-open"></i>
+                <li class="nav-item">
+                    <a href="{{ url('magic/settings') }}" class="nav-link {!! classActiveSegment(2, 'settings') !!}">
+                        <i class="nav-icon fa fa-wrench"></i>
                         <p>
-                            Mailbox
-                            <i class="fa fa-angle-left right"></i>
+                            Settings
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Inbox</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Compose</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Read</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-book"></i>
+                <li class="nav-item">
+                    <a href="{{ url('magic/terms_policy') }}" class="nav-link {!! classActiveSegment(2, 'terms_policy') !!}">
+                        <i class="nav-icon fa fa-exclamation-triangle"></i>
                         <p>
-                            Pages
-                            <i class="fa fa-angle-left right"></i>
+                            Term &#38; Condition
                         </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/examples/invoice.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Invoice</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Profile</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/login.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Login</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/register.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Register</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/lockscreen.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Lockscreen</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-plus-square"></i>
-                        <p>
-                            Extras
-                            <i class="fa fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/examples/404.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Error 404</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/500.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Error 500</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/blank.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Blank Page</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="starter.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Starter Page</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-header">MISCELLANEOUS</li>
-                <li class="nav-item">
-                    <a href="https://adminlte.io/docs" class="nav-link">
-                        <i class="nav-icon fa fa-file"></i>
-                        <p>Documentation</p>
-                    </a>
-                </li>
-                <li class="nav-header">LABELS</li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-circle-o text-danger"></i>
-                        <p class="text">Important</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-circle-notch text-warning"></i>
-                        <p>Warning</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-circle-notch text-info"></i>
-                        <p>Informational</p>
                     </a>
                 </li>
             </ul>

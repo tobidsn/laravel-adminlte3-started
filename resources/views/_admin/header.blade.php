@@ -8,7 +8,7 @@
     </ul>
     
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    {{-- <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
             <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
@@ -17,12 +17,12 @@
                 </button>
             </div>
         </div>
-    </form>
+    </form> --}}
     
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="fa fa-comments-o"></i>
                 <span class="badge badge-danger navbar-badge">3</span>
@@ -78,9 +78,9 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
             </div>
-        </li>
+        </li> --}}
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="fa fa-bell-o"></i>
                 <span class="badge badge-warning navbar-badge">15</span>
@@ -105,28 +105,33 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
-        </li>
+        </li> --}}
         <li class="nav-item dropdown user user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
+                <img src="/img/avatar.png" class="user-image img-circle elevation-2" alt="User Image">
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- User image -->
                 <li class="user-header bg-primary">
-                    <img src="/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="/img/avatar.png" class="img-circle elevation-2" alt="User Image">
 
                     <p>
-                        Alexander Pierce - Web Developer
-                        <small>Member since Nov. 2012</small>
+                        {{ Auth::user()->name }} - {{ ucfirst(Auth::user()->usertype) }}
+                        <small>Member since {{ Auth::user()->created_at->format('F Y') }}</small>
                     </p>
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                     <div class="pull-left">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        <a href="{{ url('magic/profile') }}" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                        <a href="javascript:void(0)" class="btn btn-default btn-flat"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">Sign out</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </li>
             </ul>

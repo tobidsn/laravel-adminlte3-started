@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('_admin.master') 
 @section('content')
 
 <body class="hold-transition register-page">
