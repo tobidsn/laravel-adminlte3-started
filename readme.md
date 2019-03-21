@@ -8,6 +8,7 @@ composer install
 php artisan key:generate
 Create a database and cp .env.example to .env
 php artisan migrate --seed
+git checkout dev
 ```
 # Screen Shot
 ![alt text](https://i.imgur.com/eOphznr.png)
